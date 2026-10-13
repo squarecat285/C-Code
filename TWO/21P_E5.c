@@ -5,7 +5,7 @@ int main() {
      printf("请输入n的值:");
      scanf("%d",&n);
 
-     if(n==1) {
+     if(n<=1) {
         isPrime=0;
      } else {
         for(i=2;i*i<=n;i++) {
