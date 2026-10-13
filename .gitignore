@@ -1,2 +1,14 @@
+# ===== 编译产物：不要提交 =====
+# 可执行文件
 *.exe
+# 目标文件 / 预处理输出 / 汇编输出（gcc -c / -E / -S 产生）
+*.o
+*.i
+*.s
+
+# ===== Code Runner 的临时文件 =====
+tempCodeRunnerFile.*
+tempCodeRunnerFile
+
+# ===== 编辑器配置：本地自己用，不上传 =====
 .vscode/
