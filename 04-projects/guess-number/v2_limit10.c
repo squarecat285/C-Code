@@ -1,3 +1,10 @@
+/*
+ * v2_limit10.c —— 猜数字 v2：限 10 次，并记录猜过的数字
+ * 来源：v1 的升级（原 guess/guesspro.c）
+ * 日期：2026-10-11
+ * 要点：用数组保存历史记录
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

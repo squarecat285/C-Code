@@ -1,3 +1,10 @@
+/*
+ * sum_two.c —— 求 123 + 456 的和
+ * 来源：变量与运算练习（原 sum/sum.c）
+ * 日期：2026-09-28
+ * 要点：变量的定义、赋值、printf 输出
+ */
+
 #include <stdio.h>
 int main()
 {

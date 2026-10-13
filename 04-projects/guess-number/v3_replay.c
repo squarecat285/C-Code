@@ -1,3 +1,10 @@
+/*
+ * v3_replay.c —— 猜数字 v3：随机提示语 + 可重来一局
+ * 来源：v2 的升级（原 guess/guesspro+.c）
+ * 日期：2026-10-11
+ * 要点：字符串数组、嵌套循环、scanf 读字符时前面的空格
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
