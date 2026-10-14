@@ -59,18 +59,30 @@ int main()
     }
     else
     {
-
         printf("---找零明细---\n");
+
+        /* 张数为 0 的面额不打印。每句 if 都带大括号：
+           不带的话，以后往里面加第二行时，那一行不会被 if 管住 */
         if (on_1 != 0)
+        {
             printf("50 元 * %d 张\n", on_1);
+        }
         if (tw_1 != 0)
+        {
             printf("20 元 * %d 张\n", tw_1);
+        }
         if (th_1 != 0)
+        {
             printf("10 元 * %d 张\n", th_1);
+        }
         if (fo_1 != 0)
+        {
             printf(" 5 元 * %d 张\n", fo_1);
+        }
         if (fo_2 != 0)
+        {
             printf(" 1 元 * %d 张\n", fo_2);
+        }
     }
 
     return 0;
