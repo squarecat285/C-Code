@@ -5,8 +5,9 @@
  * 要点：与 hello.c 写法不同，可对比 #include 的两种写法和缩进风格
  */
 
-#include<stdio.h>
-int main() {
+#include <stdio.h>
+int main()
+{
     printf("Hello,world!\n");
     return 0;
 }

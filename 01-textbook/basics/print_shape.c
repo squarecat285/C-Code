@@ -5,8 +5,9 @@
  * 要点：printf 中的空格与 \n 如何控制版面
  */
 
-#include<stdio.h>
-int main() {
+#include <stdio.h>
+int main()
+{
     printf("*****\n  *****\n    *****\n      *****\n");
     return 0;
 }

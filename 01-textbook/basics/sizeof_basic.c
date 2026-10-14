@@ -5,12 +5,12 @@
  * 要点：sizeof 运算符、%zu 格式符
  */
 
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    printf("%zu\n",sizeof(short));
-    printf("%zu\n",sizeof(int));
-    printf("%zu\n",sizeof(long));
-    
+    printf("%zu\n", sizeof(short));
+    printf("%zu\n", sizeof(int));
+    printf("%zu\n", sizeof(long));
+
     return 0;
 }

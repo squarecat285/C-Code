@@ -5,8 +5,8 @@
  * 要点：main 函数结构、printf、return 0
  */
 
- #include <stdio.h>
-int main() 
+#include <stdio.h>
+int main()
 {
     printf("Hello, World!\n");
     return 0;
