@@ -8,18 +8,46 @@
 
 抄书没有用，笔记的价值在于**那是你自己的话**。
 
+## 格式
+
+一个主题一个文件，照 [`_template.md`](_template.md) 抄：
+
+```text
+# 标题：一句话说清这是什么坑
+- 日期 / 出处 / 关键词
+## 现象      ← 我看到了什么。贴真实输出，不要转述
+## 原因      ← 为什么会这样，讲到机制
+## 教训      ← 以后怎么写，给一句能背下来的话
+## 还没搞懂   ← 没有就删掉这节
+```
+
+**「现象」这一节最关键。** 一定要贴终端里的**原样输出**（含退出码），不要写「它报错了」这种转述。转述会丢掉关键细节，过半年你自己都看不懂当时发生了什么。
+
+**「教训」里要给一句能背下来的话。** 笔记是给未来的你查的，不是给现在炫耀的。
+
+## 索引
+
+| 文件 | 记的是什么 |
+|---|---|
+| [`scanf-traps.md`](scanf-traps.md) | scanf 不检查返回值 → 死循环 / 打印垃圾数字 |
+| [`uninitialized-variables.md`](uninitialized-variables.md) | 未赋值的局部变量是别人留下的内存垃圾（32758） |
+| [`escape-sequences.md`](escape-sequences.md) | `\ ` 不是合法转义；GCC 的「宽容」是巧合不是正确 |
+| [`braces-and-if.md`](braces-and-if.md) | `if` 只管紧跟的一句，大括号不能省 |
+| [`duplicate-statements.md`](duplicate-statements.md) | 改代码时只加不删，输入被读两次 |
+
 ## 文件命名
 
-一个主题一个文件：
+全部小写，用连字符分隔，一个主题一个文件：
 
-```
+```text
 05-notes/
-├── compile-stages.md     编译的四个阶段
-├── data-types.md         数据类型与取值范围
-└── scanf-traps.md        scanf 的那些坑
+├── _template.md            写新笔记时复制这个
+├── scanf-traps.md          scanf 的那些坑
+├── compile-stages.md       编译的四个阶段
+└── data-types.md           数据类型与取值范围
 ```
 
-## 现在就能写两篇
+## 还没写的
 
 你手上已经有材料了：
 
