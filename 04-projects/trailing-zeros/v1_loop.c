@@ -28,6 +28,6 @@ int main()
             t = t / 5;
         }
     }
-    printf("%d", count);
+    printf("%d\n", count);
     return 0;
 }

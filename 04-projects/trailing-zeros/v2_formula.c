@@ -23,6 +23,6 @@ int main()
         count += n / 5;
         n /= 5;
     }
-    printf("末尾连续 0 的个数:%d", count);
+    printf("末尾连续 0 的个数:%d\n", count);
     return 0;
 }
