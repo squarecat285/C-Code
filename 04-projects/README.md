@@ -10,7 +10,7 @@
 |---|---|
 | [`guess-number/`](guess-number/) | 猜数字游戏，改过三个版本 |
 | [`collatz/`](collatz/) | Collatz（3n+1）猜想：算一个数要几步跌回 1 |
-| [`trailing-zeros/`](trailing-zeros/) | n! 末尾有几个连续的 0 |
+| [`trailing-zeros/`](trailing-zeros/) | n! 末尾有几个连续的 0，循环版 + 公式版 |
 
 ## 想到什么就加什么
 
