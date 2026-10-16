@@ -14,7 +14,11 @@
 int main()
 {
     int n, count = 0;
-    scanf("%d", &n);
+    if (scanf("%d", &n) != 1)
+    {
+        printf("输入无效\n");
+        return 1;
+    }
     for (int i = 1; i <= n; i++)
     {
         int t = i;
