@@ -1,7 +1,7 @@
 # braces-and-if：`if` 只管紧跟的那一句，大括号别省
 
 - **日期**：2026-10-14
-- **出处**：`01-textbook/sequence/change_maker.c`
+- **出处**：`01-textbook/control/change_maker.c`
 - **关键词**：if、大括号、缩进陷阱、悬垂 else
 
 ## 现象

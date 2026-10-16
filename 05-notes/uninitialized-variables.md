@@ -1,7 +1,7 @@
 # uninitialized-variables：没赋过值的局部变量，是别人留下的垃圾
 
 - **日期**：2026-10-14
-- **出处**：`01-textbook/sequence/change_maker.c`
+- **出处**：`01-textbook/control/change_maker.c`
 - **关键词**：未初始化、局部变量、栈、未定义行为、32758
 
 ## 现象

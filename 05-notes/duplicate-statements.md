@@ -1,7 +1,7 @@
 # duplicate-statements：改代码时只加不删，输入被读了两次
 
 - **日期**：2026-10-14
-- **出处**：`01-textbook/sequence/change_maker.c`
+- **出处**：`01-textbook/control/change_maker.c`
 - **关键词**：复制粘贴、漏删、scanf、回归
 
 ## 现象

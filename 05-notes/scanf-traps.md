@@ -1,7 +1,7 @@
 # scanf-traps：scanf 失败时不会告诉你，它只是不写变量
 
 - **日期**：2026-10-14
-- **出处**：`01-textbook/sequence/change_maker.c`
+- **出处**：`01-textbook/control/change_maker.c`
 - **关键词**：scanf、返回值、死循环、EOF、未初始化变量
 
 ## 现象

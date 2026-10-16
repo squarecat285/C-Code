@@ -10,7 +10,7 @@
 | [`02-homework/`](02-homework/) | 课程作业 | 待开始 |
 | [`03-oj/`](03-oj/) | 在线判题（洛谷） | 待开始 |
 | [`04-projects/`](04-projects/) | 自己做的小玩意儿 | 进行中 |
-| [`05-notes/`](05-notes/) | 学习笔记 | 待开始 |
+| [`05-notes/`](05-notes/) | 学习笔记 | 进行中 |
 | [`scratch/`](scratch/) | 随手试的零散代码 | — |
 | [`templates/`](templates/) | 新建文件时套用的模板 | — |
 

@@ -1,7 +1,7 @@
 # escape-sequences：`\ ` 不是转义序列，编译器的「宽容」很危险
 
 - **日期**：2026-10-14
-- **出处**：`01-textbook/sequence/change_maker.c`
+- **出处**：`01-textbook/control/change_maker.c`
 - **关键词**：转义序列、反斜杠、编译器警告、八进制
 
 ## 现象
