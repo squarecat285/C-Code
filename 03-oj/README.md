@@ -6,15 +6,28 @@
 
 https://www.luogu.com.cn/
 
-### 命名约定
+### 按题单分文件夹
 
-用题目编号开头，后面跟一句简短的英文描述：
+一个洛谷题单一个文件夹，做完一组就换下一个，不要全堆在一层：
 
 ```
 03-oj/luogu/
-├── P1001_a_plus_b.c
-├── P1008_three_division.c
-└── P1421_schoolwork.c
+├── intro-1-sequence/         ← 【入门1】顺序结构
+│   ├── README.md             ← 这一组的进度表
+│   ├── P5705_digit_reversal.c
+│   └── P1421_buy_supplies.c
+└── intro-2-branch/           ← 【入门2】分支结构
+    ├── README.md
+    └── P5711_leap_year.c
+```
+
+### 命名约定
+
+文件名用题目编号开头，后面跟一句简短的英文描述：
+
+```
+P5705_digit_reversal.c
+P1008_three_division.c
 ```
 
 ### 每道题的文件头
