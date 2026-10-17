@@ -5,17 +5,17 @@
  * 结果：✅ AC
  * 日期：2026-10-17
  * 要点：每人毫升数 = t / n，用 %.3f 输出；每人 2 个杯子，杯子总数 = n * 2，分两行打。
- * 坑：这题用的是 float，但 t 最大 10000、要精确到 3 位小数，float 只有 7 位有效数字，够呛 ——
+ * 坑：一开始用的是 float —— t 最大 10000、要精确到 3 位小数，float 只有 7 位有效数字，
  *     实测 2000 万组随机输入里约 0.16% 的结果和 double 不一样
- *     （如 t=2.5 n=1000：float 得 0.002，double 得 0.003）。要不要改成 double 待定。
+ *     （如 t=2.5 n=1000：float 得 0.002，double 得 0.003）。最后改成了 double。
  */
 #include <stdio.h>
 int main()
 {
-    float t;
+    double t;
     int n;
-    scanf("%f %d", &t, &n);
-    float t_n = t / n;
+    scanf("%lf %d", &t, &n);
+    double t_n = t / n;
     int n2 = n * 2;
     printf("%.3f\n%d", t_n, n2);
     return 0;
