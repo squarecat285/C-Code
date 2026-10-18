@@ -9,6 +9,16 @@
 | [`basics/`](basics/) | 顺序结构：输出、变量、数据类型、输入输出 | ✅ |
 | [`control/`](control/) | 选择结构（`if`）与循环结构（`while` / `for`） | ✅ |
 
+### 第三章课后题（都在 `basics/` 里）
+
+| 文件 | 题目让你算什么 | 练到的 |
+|---|---|---|
+| [`basics/growth_rate.c`](basics/growth_rate.c) | 年增长率 7%，10 年后比现在增长百分之几 | `pow`、`%%` 打百分号 |
+| [`basics/repay_loan.c`](basics/repay_loan.c) | 贷款 30 万、月还 6000、月利率 1%，几个月还清 | `log` 换底公式 |
+| [`basics/char_analysis.c`](basics/char_analysis.c) | 同一个变量，`%c` 打是 `a`、`%d` 打是 `97` | `char` 就是小整数 |
+| [`basics/encrypt_china.c`](basics/encrypt_china.c) | 每个字母往后挪 4 位，`China` → `Glmre` | `putchar`、字符运算 |
+| [`basics/circle.c`](basics/circle.c) | 圆周长、圆面积、球面积、球体积、圆柱体积 | `scanf` 读 double、`%.2f` |
+
 ## 以后继续加
 
 按**知识阶段**分目录，不要按书的页码分。学到哪就建哪个：
