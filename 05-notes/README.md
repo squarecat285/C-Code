@@ -34,6 +34,7 @@
 | [`escape-sequences.md`](escape-sequences.md) | `\ ` 不是合法转义；GCC 的「宽容」是巧合不是正确 |
 | [`braces-and-if.md`](braces-and-if.md) | `if` 只管紧跟的一句，大括号不能省 |
 | [`duplicate-statements.md`](duplicate-statements.md) | 改代码时只加不删，输入被读两次 |
+| [`switch-case-scope.md`](switch-case-scope.md) | `case` 是标签不是块，不同分支的同名变量会重定义 |
 
 ## 文件命名
 
