@@ -10,7 +10,7 @@
 |---|---|---|
 | [P2433 【深基1-2】小学数学 N 合一](https://www.luogu.com.cn/problem/P2433) | [`P2433_elementary_math.c`](P2433_elementary_math.c) | ✅ AC |
 | [P5709 【深基2.习6】Apples Prologue / 苹果和虫子](https://www.luogu.com.cn/problem/P5709) | [`P5709_apples_prologue.c`](P5709_apples_prologue.c) | ⬜ 待提交 |
-| [P5710 【深基3.例2】数的性质](https://www.luogu.com.cn/problem/P5710) | [`P5710_number_properties.c`](P5710_number_properties.c) | ⬜ 待提交 |
+| [P5710 【深基3.例2】数的性质](https://www.luogu.com.cn/problem/P5710) | [`P5710_number_properties.c`](P5710_number_properties.c) | ❌ CE（粘代码时少了最后的 `}`） |
 
 > ⬜ 未做　🟡 卡住　✅ AC　❌ 没通过　　18 题按题单顺序边做边补，这张表只列有本地文件的。
 
@@ -19,7 +19,8 @@
 | 题 | 坑 |
 |---|---|
 | P5709 | `t = 0` 是合法数据，直接除会 RE。另外原来在 `m - e < 0` 时什么都不输出，标准答案是 `0`，交白卷 → WA |
-| P5710 | 「两个都不满足」写成 `!(A && B)`，那是「不都满足」，0~1000 里错 501 个；改成复用 `!any` 才对 |
+| P5710 | 代码：「两个都不满足」写成 `!(A && B)`，那是「不都满足」，0~1000 里错 501 个；改成复用 `!any` 才对 |
+| P5710 | 提交：粘贴时把最后一行 `}` 漏了，洛谷报 `expected declaration or statement at end of input` |
 
 ## P2433 这题怎么读
 
