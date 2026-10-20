@@ -9,18 +9,26 @@
 | 题目 | 文件 | 结果 |
 |---|---|---|
 | [P2433 【深基1-2】小学数学 N 合一](https://www.luogu.com.cn/problem/P2433) | [`P2433_elementary_math.c`](P2433_elementary_math.c) | ✅ AC |
-| [P5709 【深基2.习6】Apples Prologue / 苹果和虫子](https://www.luogu.com.cn/problem/P5709) | [`P5709_apples_prologue.c`](P5709_apples_prologue.c) | ⬜ 待提交 |
-| [P5710 【深基3.例2】数的性质](https://www.luogu.com.cn/problem/P5710) | [`P5710_number_properties.c`](P5710_number_properties.c) | ❌ CE（粘代码时少了最后的 `}`） |
+| [P5709 【深基2.习6】Apples Prologue / 苹果和虫子](https://www.luogu.com.cn/problem/P5709) | [`P5709_apples_prologue.c`](P5709_apples_prologue.c) | ✅ AC |
+| [P5710 【深基3.例2】数的性质](https://www.luogu.com.cn/problem/P5710) | [`P5710_number_properties.c`](P5710_number_properties.c) | ✅ AC |
+| [P5711 【深基3.例3】闰年判断](https://www.luogu.com.cn/problem/P5711) | [`P5711_leap_year.c`](P5711_leap_year.c) | ⬜ 待提交（本地 1582~2020 全对） |
+| [P5712 【深基3.例4】Apples](https://www.luogu.com.cn/problem/P5712) | [`P5712_apples.c`](P5712_apples.c) | ⬜ 待提交（本地 0~100 全对） |
+| [P5713 【深基3.例5】洛谷团队系统](https://www.luogu.com.cn/problem/P5713) | [`P5713_team_system.c`](P5713_team_system.c) | ⬜ 待提交（本地 1~100 全对） |
 
 > ⬜ 未做　🟡 卡住　✅ AC　❌ 没通过　　18 题按题单顺序边做边补，这张表只列有本地文件的。
 
-### 这两题各自栽在哪
+### 这几题各自栽在哪
 
 | 题 | 坑 |
 |---|---|
 | P5709 | `t = 0` 是合法数据，直接除会 RE。另外原来在 `m - e < 0` 时什么都不输出，标准答案是 `0`，交白卷 → WA |
 | P5710 | 代码：「两个都不满足」写成 `!(A && B)`，那是「不都满足」，0~1000 里错 501 个；改成复用 `!any` 才对 |
 | P5710 | 提交：粘贴时把最后一行 `}` 漏了，洛谷报 `expected declaration or statement at end of input` |
+| P5711 | 后半段写成 `a % 100 == 0`：`a` 是这一行要赋值的变量，当时还是 0，`0 % 100 == 0` 恒真 → 439 年里错 332 个 |
+| P5711 | 就算改成 `n % 100 == 0` 也不对，1900 是整百年但非 400 倍数是平年，必须 `n % 400 == 0` |
+| P5712 | 没踩坑。值得注意的是 `0` 用单数 `apple`（题目说「把 1 换成 0」），容易顺手写成 `apples` |
+| P5713 | `if (min = 1)` 少一个 `=` 变成赋值，条件恒真 → 永远输出 `Luogu`。gcc 对此有警告（`-Wparentheses`），别忽略 |
+| P5713 | 平局归谁：题目「本地短输出 `Local`，否则 `Luogu`」，打平该给 `Luogu`；本题 `2n = 11` 无整数解碰不到，但换个范围就是坑 |
 
 ## P2433 这题怎么读
 

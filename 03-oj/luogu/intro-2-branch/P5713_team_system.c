@@ -1,0 +1,28 @@
+/*
+ * P5713_team_system.c —— 洛谷团队系统：本地每题 5 分钟 vs 团队 3 分钟 + 一次性 11 分钟
+ * 来源：洛谷 P5713 【深基3.例5】洛谷团队系统
+ * 题目：https://www.luogu.com.cn/problem/P5713
+ * 结果：⬜ 待提交（本地 1~100 全对）
+ * 日期：2026-10-20
+ * 要点：本地 5n，团队 3n+11，两边相减得 2n-11：
+ *       n = 5 时 25 < 26 本地省，n = 6 时 30 > 29 团队省。
+ *       题目说「本地短输出 Local，否则输出 Luogu」——平局要归 Luogu。
+ * 坑：if (min = 1) 少了一个 = 变成赋值，条件恒为真，永远输出 Luogu。
+ *     gcc 其实警告过：suggest parentheses around assignment used as truth value。
+ */
+#include <stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int min = ((5 * n) > (3 * n + 11)) ? 1 : 0;
+    if (min == 1)
+    {
+        printf("Luogu");
+    }
+    else
+    {
+        printf("Local");
+    }
+    return 0;
+}

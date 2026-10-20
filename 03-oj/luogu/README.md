@@ -5,7 +5,7 @@
 | 题单 | 文件夹 | 题数 | 进度 |
 |---|---|---|---|
 | [【入门1】顺序结构](https://www.luogu.com.cn/training/100) | [`intro-1-sequence/`](intro-1-sequence/) | 15 | ✅ 15 / 15 |
-| [【入门2】分支结构](https://www.luogu.com.cn/training/101) | [`intro-2-branch/`](intro-2-branch/) | 18 | 🟡 1 / 18 |
+| [【入门2】分支结构](https://www.luogu.com.cn/training/101) | [`intro-2-branch/`](intro-2-branch/) | 18 | 🟡 3 / 18 |
 | 【入门3】循环结构 | `intro-3-loop/` | — | ⬜ 待开始 |
 
 ## 目录长这样
