@@ -11,9 +11,9 @@
 | [P2433 【深基1-2】小学数学 N 合一](https://www.luogu.com.cn/problem/P2433) | [`P2433_elementary_math.c`](P2433_elementary_math.c) | ✅ AC |
 | [P5709 【深基2.习6】Apples Prologue / 苹果和虫子](https://www.luogu.com.cn/problem/P5709) | [`P5709_apples_prologue.c`](P5709_apples_prologue.c) | ✅ AC |
 | [P5710 【深基3.例2】数的性质](https://www.luogu.com.cn/problem/P5710) | [`P5710_number_properties.c`](P5710_number_properties.c) | ✅ AC |
-| [P5711 【深基3.例3】闰年判断](https://www.luogu.com.cn/problem/P5711) | [`P5711_leap_year.c`](P5711_leap_year.c) | ⬜ 待提交（本地 1582~2020 全对） |
-| [P5712 【深基3.例4】Apples](https://www.luogu.com.cn/problem/P5712) | [`P5712_apples.c`](P5712_apples.c) | ⬜ 待提交（本地 0~100 全对） |
-| [P5713 【深基3.例5】洛谷团队系统](https://www.luogu.com.cn/problem/P5713) | [`P5713_team_system.c`](P5713_team_system.c) | ⬜ 待提交（本地 1~100 全对） |
+| [P5711 【深基3.例3】闰年判断](https://www.luogu.com.cn/problem/P5711) | [`P5711_leap_year.c`](P5711_leap_year.c) | ✅ AC |
+| [P5712 【深基3.例4】Apples](https://www.luogu.com.cn/problem/P5712) | [`P5712_apples.c`](P5712_apples.c) | ✅ AC |
+| [P5713 【深基3.例5】洛谷团队系统](https://www.luogu.com.cn/problem/P5713) | [`P5713_team_system.c`](P5713_team_system.c) | ✅ AC |
 
 > ⬜ 未做　🟡 卡住　✅ AC　❌ 没通过　　18 题按题单顺序边做边补，这张表只列有本地文件的。
 

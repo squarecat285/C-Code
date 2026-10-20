@@ -2,7 +2,7 @@
  * P5712_apples.c —— Apples：按苹果个数选单数 apple / 复数 apples 造句
  * 来源：洛谷 P5712 【深基3.例4】Apples
  * 题目：https://www.luogu.com.cn/problem/P5712
- * 结果：⬜ 待提交（本地 0~100 全对）
+ * 结果：✅ AC（本地 0~100 全对）
  * 日期：2026-10-20
  * 要点：0 和 1 都用单数 apple，2 及以上才加 s。句式固定：
  *       "Today, I ate %d apple(s)." 注意 Today 后面有逗号、句末有句号。
