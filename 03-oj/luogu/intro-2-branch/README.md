@@ -6,16 +6,20 @@
 
 ## 进度
 
-| 题目 | 文件 | 结果 |
-|---|---|---|
-| [P2433 【深基1-2】小学数学 N 合一](https://www.luogu.com.cn/problem/P2433) | [`P2433_elementary_math.c`](P2433_elementary_math.c) | ✅ AC |
-| [P5709 【深基2.习6】Apples Prologue / 苹果和虫子](https://www.luogu.com.cn/problem/P5709) | [`P5709_apples_prologue.c`](P5709_apples_prologue.c) | ✅ AC |
-| [P5710 【深基3.例2】数的性质](https://www.luogu.com.cn/problem/P5710) | [`P5710_number_properties.c`](P5710_number_properties.c) | ✅ AC |
-| [P5711 【深基3.例3】闰年判断](https://www.luogu.com.cn/problem/P5711) | [`P5711_leap_year.c`](P5711_leap_year.c) | ✅ AC |
-| [P5712 【深基3.例4】Apples](https://www.luogu.com.cn/problem/P5712) | [`P5712_apples.c`](P5712_apples.c) | ✅ AC |
-| [P5713 【深基3.例5】洛谷团队系统](https://www.luogu.com.cn/problem/P5713) | [`P5713_team_system.c`](P5713_team_system.c) | ✅ AC |
+| 题目 | 文件 |
+|---|---|
+| [P2433 【深基1-2】小学数学 N 合一](https://www.luogu.com.cn/problem/P2433) | [`P2433_elementary_math.c`](P2433_elementary_math.c) |
+| [P5709 【深基2.习6】Apples Prologue / 苹果和虫子](https://www.luogu.com.cn/problem/P5709) | [`P5709_apples_prologue.c`](P5709_apples_prologue.c) |
+| [P5710 【深基3.例2】数的性质](https://www.luogu.com.cn/problem/P5710) | [`P5710_number_properties.c`](P5710_number_properties.c) |
+| [P5711 【深基3.例3】闰年判断](https://www.luogu.com.cn/problem/P5711) | [`P5711_leap_year.c`](P5711_leap_year.c) |
+| [P5712 【深基3.例4】Apples](https://www.luogu.com.cn/problem/P5712) | [`P5712_apples.c`](P5712_apples.c) |
+| [P5713 【深基3.例5】洛谷团队系统](https://www.luogu.com.cn/problem/P5713) | [`P5713_team_system.c`](P5713_team_system.c) |
+| [P5714 【深基3.例7】肥胖问题](https://www.luogu.com.cn/problem/P5714) | [`P5714_fat_problem.c`](P5714_fat_problem.c) |
+| [P5715 【深基3.例8】三位数排序](https://www.luogu.com.cn/problem/P5715) | [`P5715_number_sort.c`](P5715_number_sort.c) |
+| [P5716 【深基3.例9】月份天数](https://www.luogu.com.cn/problem/P5716) | [`P5716_month_days.c`](P5716_month_days.c) |
+| [P1085 [NOIP 2004 普及组] 不高兴的津津](https://www.luogu.com.cn/problem/P1085) | [`P1085_unhappy_jinjin.c`](P1085_unhappy_jinjin.c) |
 
-> ⬜ 未做　🟡 卡住　✅ AC　❌ 没通过　　18 题按题单顺序边做边补，这张表只列有本地文件的。
+> 18 题按题单顺序边做边补，这张表只列有本地文件的。交没交、过没过在洛谷上看，这里不记。
 
 ### 这几题各自栽在哪
 
@@ -29,6 +33,10 @@
 | P5712 | 没踩坑。值得注意的是 `0` 用单数 `apple`（题目说「把 1 换成 0」），容易顺手写成 `apples` |
 | P5713 | `if (min = 1)` 少一个 `=` 变成赋值，条件恒真 → 永远输出 `Luogu`。gcc 对此有警告（`-Wparentheses`），别忽略 |
 | P5713 | 平局归谁：题目「本地短输出 `Local`，否则 `Luogu`」，打平该给 `Luogu`；本题 `2n = 11` 无整数解碰不到，但换个范围就是坑 |
+| P5714 | `%.6f` 是 6 位小数，`%.6g` 才是 6 位有效数字（且自动去掉尾随 0）。题目明说「不是保留六位小数」 |
+| P5715 | 没踩坑。三个 `if` 交换就是一个排序网络：先让 `a` 最小，再让 `b ≤ c`，三步排完 |
+| P5716 | 照搬 P5711 的闰年判定就行，2 月单独处理；`switch` 里 `case (1):` 加括号是合法的，多余但无害 |
+| P1085 | **未修完**：① `for` 条件写成 `1 <= 7` 恒真 → 死循环；② `scanf("%d %d", a, b)` 少了 `&` → 段错误；③ 只更新 `max_day` 没更新 `max_total` → 并列时取到了靠后那天 |
 
 ## P2433 这题怎么读
 

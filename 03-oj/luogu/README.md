@@ -2,11 +2,13 @@
 
 按洛谷官方题单分组：**一个题单一个文件夹**。做完一组，下一组直接新建一个文件夹，互不干扰。
 
-| 题单 | 文件夹 | 题数 | 进度 |
-|---|---|---|---|
-| [【入门1】顺序结构](https://www.luogu.com.cn/training/100) | [`intro-1-sequence/`](intro-1-sequence/) | 15 | ✅ 15 / 15 |
-| [【入门2】分支结构](https://www.luogu.com.cn/training/101) | [`intro-2-branch/`](intro-2-branch/) | 18 | 🟡 6 / 18 |
-| 【入门3】循环结构 | `intro-3-loop/` | — | ⬜ 待开始 |
+| 题单 | 文件夹 | 题数 |
+|---|---|---|
+| [【入门1】顺序结构](https://www.luogu.com.cn/training/100) | [`intro-1-sequence/`](intro-1-sequence/) | 15 |
+| [【入门2】分支结构](https://www.luogu.com.cn/training/101) | [`intro-2-branch/`](intro-2-branch/) | 18 |
+| 【入门3】循环结构 | `intro-3-loop/` | — |
+
+> 交没交、过没过在洛谷上自己看，这里不记。
 
 ## 目录长这样
 
