@@ -20,6 +20,8 @@
 | [P1085 [NOIP 2004 普及组] 不高兴的津津](https://www.luogu.com.cn/problem/P1085) | [`P1085_unhappy_jinjin.c`](P1085_unhappy_jinjin.c) |
 | [P1909 [NOIP 2016 普及组] 买铅笔](https://www.luogu.com.cn/problem/P1909) | [`P1909_buy_pencils.c`](P1909_buy_pencils.c) |
 | [P1422 小玉家的电费](https://www.luogu.com.cn/problem/P1422) | [`P1422_electricity_bill.c`](P1422_electricity_bill.c) |
+| [P5717 【深基3.习8】三角形分类](https://www.luogu.com.cn/problem/P5717) | [`P5717_triangle_classify.c`](P5717_triangle_classify.c) |
+| [P1424 小鱼的航程(改进版)](https://www.luogu.com.cn/problem/P1424) | [`P1424_fish_journey.c`](P1424_fish_journey.c)（**还有 bug，未定稿**） |
 
 > 18 题按题单顺序边做边补，这张表只列有本地文件的。交没交、过没过在洛谷上看，这里不记。
 
