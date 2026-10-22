@@ -18,6 +18,7 @@
 | [P5715 【深基3.例8】三位数排序](https://www.luogu.com.cn/problem/P5715) | [`P5715_number_sort.c`](P5715_number_sort.c) |
 | [P5716 【深基3.例9】月份天数](https://www.luogu.com.cn/problem/P5716) | [`P5716_month_days.c`](P5716_month_days.c) |
 | [P1085 [NOIP 2004 普及组] 不高兴的津津](https://www.luogu.com.cn/problem/P1085) | [`P1085_unhappy_jinjin.c`](P1085_unhappy_jinjin.c) |
+| [P1909 [NOIP 2016 普及组] 买铅笔](https://www.luogu.com.cn/problem/P1909) | [`P1909_buy_pencils.c`](P1909_buy_pencils.c) |
 
 > 18 题按题单顺序边做边补，这张表只列有本地文件的。交没交、过没过在洛谷上看，这里不记。
 
@@ -36,7 +37,9 @@
 | P5714 | `%.6f` 是 6 位小数，`%.6g` 才是 6 位有效数字（且自动去掉尾随 0）。题目明说「不是保留六位小数」 |
 | P5715 | 没踩坑。三个 `if` 交换就是一个排序网络：先让 `a` 最小，再让 `b ≤ c`，三步排完 |
 | P5716 | 照搬 P5711 的闰年判定就行，2 月单独处理；`switch` 里 `case (1):` 加括号是合法的，多余但无害 |
-| P1085 | **未修完**：① `for` 条件写成 `1 <= 7` 恒真 → 死循环；② `scanf("%d %d", a, b)` 少了 `&` → 段错误；③ 只更新 `max_day` 没更新 `max_total` → 并列时取到了靠后那天 |
+| P1085 | 三处：① `for` 条件写成 `1 <= 7` 恒真 → 死循环（gcc 不报）；② `scanf("%d %d", a, b)` 少了 `&` → 段错误；③ 只更新 `max_day` 没更新 `max_total` → 每次比较都成立，输出的是最后一天 |
+| P1909 | 包数写成 `n % each + 1`（余数 + 1），跟「要几包」没关系。一亿组里错 99.94%，官方样例输出 4（正确 54）。正解 `(n + each - 1) / each` |
+| P1909 | `price_min` 初值写 100000000，而本题最贵正好是 1 亿，答案真是 1 亿时就永远不更新；改成 `INT_MAX` 或在第一组直接赋值 |
 
 ## P2433 这题怎么读
 
