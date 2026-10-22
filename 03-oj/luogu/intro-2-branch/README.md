@@ -19,6 +19,7 @@
 | [P5716 【深基3.例9】月份天数](https://www.luogu.com.cn/problem/P5716) | [`P5716_month_days.c`](P5716_month_days.c) |
 | [P1085 [NOIP 2004 普及组] 不高兴的津津](https://www.luogu.com.cn/problem/P1085) | [`P1085_unhappy_jinjin.c`](P1085_unhappy_jinjin.c) |
 | [P1909 [NOIP 2016 普及组] 买铅笔](https://www.luogu.com.cn/problem/P1909) | [`P1909_buy_pencils.c`](P1909_buy_pencils.c) |
+| [P1422 小玉家的电费](https://www.luogu.com.cn/problem/P1422) | [`P1422_electricity_bill.c`](P1422_electricity_bill.c) |
 
 > 18 题按题单顺序边做边补，这张表只列有本地文件的。交没交、过没过在洛谷上看，这里不记。
 
@@ -40,6 +41,8 @@
 | P1085 | 三处：① `for` 条件写成 `1 <= 7` 恒真 → 死循环（gcc 不报）；② `scanf("%d %d", a, b)` 少了 `&` → 段错误；③ 只更新 `max_day` 没更新 `max_total` → 每次比较都成立，输出的是最后一天 |
 | P1909 | 包数写成 `n % each + 1`（余数 + 1），跟「要几包」没关系。一亿组里错 99.94%，官方样例输出 4（正确 54）。正解 `(n + each - 1) / each` |
 | P1909 | `price_min` 初值写 100000000，而本题最贵正好是 1 亿，答案真是 1 亿时就永远不更新；改成 `INT_MAX` 或在第一组直接赋值 |
+| P1422 | `cost = (int)(cost * 10) / 10.0;` 以为在四舍五入，其实 `(int)` 是砍小数 → 第二位小数 ≥ 5 的全少 0.1。1~10000 错 4995 组，样例 267 恰好对。`%.1f` 本来就四舍五入，多这一行是净负收益 |
+| P1422 | 也别手写 `(int)(cost*10+0.5)/10.0`：500 / 3500 / 4500 / 7500 精确值是 `x.x5`，但 `double` 存成 `x.x4999…`，`printf` 给 `240.1`、手写 +0.5 给 `240.2`，两者不同 |
 
 ## P2433 这题怎么读
 
