@@ -23,6 +23,7 @@
 | [P5717 【深基3.习8】三角形分类](https://www.luogu.com.cn/problem/P5717) | [`P5717_triangle_classify.c`](P5717_triangle_classify.c) |
 | [P1424 小鱼的航程(改进版)](https://www.luogu.com.cn/problem/P1424) | [`P1424_fish_journey.c`](P1424_fish_journey.c) |
 | [P1888 三角函数](https://www.luogu.com.cn/problem/P1888) | [`P1888_trigonometry.c`](P1888_trigonometry.c) |
+| [P4414 [COCI 2006/2007 #2] ABC](https://www.luogu.com.cn/problem/P4414) | [`P4414_abc.c`](P4414_abc.c) |
 
 > 18 题按题单顺序边做边补，这张表只列有本地文件的。交没交、过没过在洛谷上看，这里不记。
 
@@ -51,6 +52,10 @@
 | P5717 | `if (max = min)` 是赋值不是比较；下一行只写了个字符串字面量、没有 `printf`，gcc 报 `statement with no effect`。等边三角形同时也要打 `Isosceles` |
 | P1424 | 第一段 `for (int i = x; i <= 7; i++)` 没用 `n` 限制，总是把本周剩下的工作日全加完 → `n` 比本周剩余天数还短时全错（`1 1` 应 250，给了 1250）。1400 组里错 10 组，`n ≥ 8` 之后全对，样例测不出来 |
 | P1888 | 斜边永远是最长那条，不能按输入顺序把 `c` 当斜边；题目要求约分，`6 8 10` 不约分是 `6/10`，正确答案 `3/5` |
+| P4414 | `scanf("%d", n[i])` 少了 `&` → 段错误（退出码 139）。gcc 有 `-Wformat` 警告，别忽略 |
+| P4414 | 读字母写成 `scanf("%c%c%c")` 没加前导空格：上一行遗留的换行被当成第一个字母，三个字母整体错位。`%c` 是唯一不跳过空白的格式符 |
+| P4414 | 想把字母也「排序」一遍：把排数字的 if 交换复制一份、条件改成比较字母、交换体却忘了换变量。6 种字母顺序里 5 种碰巧对，唯独 `BCA` 错 → 9/10 AC。字母不需要排序，需要按字母取值 `n[s[i] - 'A']` |
+| P4414 | `char s[3]` 装 3 个字母会越界：`scanf("%s")` 还要写一个 `'\0'`，必须开 `s[4]` |
 
 ## P2433 这题怎么读
 
