@@ -6,7 +6,8 @@
 |---|---|---|
 | [【入门1】顺序结构](https://www.luogu.com.cn/training/100) | [`intro-1-sequence/`](intro-1-sequence/) | 15 |
 | [【入门2】分支结构](https://www.luogu.com.cn/training/101) | [`intro-2-branch/`](intro-2-branch/) | 18 |
-| 【入门3】循环结构 | `intro-3-loop/` | — |
+| [【入门3】循环结构](https://www.luogu.com.cn/training/102) | [`intro-3-loop/`](intro-3-loop/) | 21 |
+| 【入门4】数组 | `intro-4-array/` | 20 |
 
 > 交没交、过没过在洛谷上自己看，这里不记。
 
@@ -20,9 +21,13 @@
 │   ├── P1000_mario.c
 │   ├── P5705_digit_reversal.c
 │   └── …
-└── intro-2-branch/           ← 【入门2】分支结构（training/101），现在这组
-    ├── README.md             ← 这一组的题目进度表
-    └── P2433_elementary_math.c
+├── intro-2-branch/           ← 【入门2】分支结构（training/101）
+│   ├── README.md
+│   └── P2433_elementary_math.c
+└── intro-3-loop/             ← 【入门3】循环结构（training/102），现在这组
+    ├── README.md
+    ├── P5718_find_min.c
+    └── …
 ```
 
 **只把在 VS Code 里写过代码的题放进来。** 直接在洛谷网页上做掉的题，在那一组的进度表里记一行就够了，不用补文件。
