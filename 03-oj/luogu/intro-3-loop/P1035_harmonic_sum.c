@@ -1,0 +1,32 @@
+/*
+ * P1035_harmonic_sum.c —— 级数求和：找最小的 n，使 1 + 1/2 + ... + 1/n > k
+ * 来源：洛谷 P1035 [NOIP 2002 普及组] 级数求和
+ * 题目：https://www.luogu.com.cn/problem/P1035
+ * 日期：2026-10-26
+ * 要点：一边加一边判断，加到「第一次超过 k」就停 —— 这就是 for (;;) + break 的用法。
+ *       1 ≤ k ≤ 15，k = 15 时答案是 1835421，一百多万次循环，跑得动。
+ *       和用 double 存：float 只有 6~7 位有效数字，累加一百多万项误差会累积。
+ * 坑：1) 写成 1 / i 会变整数除法，永远加 0，死循环；必须写 1.0 / i
+ *     2) 条件写成 sum >= k 就错了，题目要的是严格「大于」k
+ *     3) 判断必须放在「加完这一项之后」，否则 count 会少 1
+ * 建议：也可以写成 while (sum <= k) { n++; sum += 1.0 / n; }，把 n 当成一个正经变量，
+ *       比 for (int i = 1;; i++) 加 break 更好读。
+ */
+#include <stdio.h>
+int main()
+{
+    int k, count = 0;
+    double sum = 0.0;
+    scanf("%d", &k);
+    for (int i = 1;; i++)
+    {
+        sum = sum + 1.0 / i;
+        count++;
+        if (sum > k)
+        {
+            break;
+        }
+    }
+    printf("%d", count);
+    return 0;
+}
