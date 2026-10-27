@@ -18,7 +18,7 @@
 int main()
 {
     int n, k, count = 0;
-    float sum = 0;
+    double sum = 0;
     scanf("%d %d", &n, &k);
     for (int i = 1; i <= n; i++)
     {
@@ -28,8 +28,8 @@ int main()
             count++;
         }
     }
-    float A = sum / count;
-    float B = (n * (1 + n) / 2 - sum) / (n - count);
+    double A = sum / count;
+    double B = (n * (1 + n) / 2 - sum) / (n - count);
     printf("%.1f %.1f", A, B);
     return 0;
 }

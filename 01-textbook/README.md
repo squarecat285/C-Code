@@ -19,6 +19,14 @@
 | [`basics/encrypt_china.c`](basics/encrypt_china.c) | 每个字母往后挪 4 位，`China` → `Glmre` | `putchar`、字符运算 |
 | [`basics/circle.c`](basics/circle.c) | 圆周长、圆面积、球面积、球体积、圆柱体积 | `scanf` 读 double、`%.2f` |
 
+### 第五章课后题（都在 `control/` 里）
+
+| 文件 | 题目让你算什么 | 练到的 |
+|---|---|---|
+| [`control/gcd_lcm.c`](control/gcd_lcm.c) | 两个正整数的最大公约数和最小公倍数 | 辗转相除法、`a / gcd * b` 先除后乘防溢出 |
+| [`control/count_chars.c`](control/count_chars.c) | 一行字符里字母、空格、数字、其他各几个 | `getchar` 循环、`ctype.h`、`c` 要声明成 `int` |
+| [`control/perfect_numbers.c`](control/perfect_numbers.c) | 1000 以内的所有完数及其因子 | 双重循环、`j <= i / 2`、用 `first` 标记控制逗号 |
+
 ## 以后继续加
 
 按**知识阶段**分目录，不要按书的页码分。学到哪就建哪个：
