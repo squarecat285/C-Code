@@ -11,10 +11,13 @@
 | [P1009 [NOIP 1998 普及组] 阶乘之和](https://www.luogu.com.cn/problem/P1009) | [`P1009_factorial_sum.c`](P1009_factorial_sum.c) |
 | [P1035 [NOIP 2002 普及组] 级数求和](https://www.luogu.com.cn/problem/P1035) | [`P1035_harmonic_sum.c`](P1035_harmonic_sum.c) |
 | [P1980 [NOIP 2013 普及组] 计数问题](https://www.luogu.com.cn/problem/P1980) | [`P1980_count_digit.c`](P1980_count_digit.c) |
+| [P2669 [NOIP 2015 普及组] 金币](https://www.luogu.com.cn/problem/P2669) | [`P2669_gold_coin.c`](P2669_gold_coin.c) |
 | [P5718 【深基4.例2】找最小值](https://www.luogu.com.cn/problem/P5718) | [`P5718_find_min.c`](P5718_find_min.c) |
 | [P5719 【深基4.例3】分类平均](https://www.luogu.com.cn/problem/P5719) | [`P5719_classify_average.c`](P5719_classify_average.c) |
 | [P5720 【深基4.例4】一尺之棰](https://www.luogu.com.cn/problem/P5720) | [`P5720_half_stick.c`](P5720_half_stick.c) |
 | [P5721 【深基4.例6】数字直角三角形](https://www.luogu.com.cn/problem/P5721) | [`P5721_number_triangle.c`](P5721_number_triangle.c) |
+| [P5722 【深基4.例11】数列求和](https://www.luogu.com.cn/problem/P5722) | [`P5722_series_sum.c`](P5722_series_sum.c) |
+| [P5723 【深基4.习9】质数口袋](https://www.luogu.com.cn/problem/P5723) | [`P5723_prime_pocket.c`](P5723_prime_pocket.c) |
 
 > 21 题按题单顺序边做边补，这张表只列有本地文件的。交没交、过没过在洛谷上看，这里不记。
 
@@ -25,10 +28,13 @@
 | P1009 | 第一次碰高精度：`50!` 有 65 位，`long long` 只有 19 位。换成「一个数组、一格一位」之后，难点从算法变成了**长度记账**——`lenF` / `lenA` 忘了接返回值就会被截断 |
 | P1035 | 没有错。`1.0 / i` 这个小数点写对了，条件 `sum > k` 也用的是严格大于 |
 | P1980 | 没有错，只有变量名 `dight` 拼错（应为 `digit`）。`x = 0` 这个最容易漏的情况实测也对 |
+| P2669 | 没有错。这题的关键是**双层循环要跳出两层就写两个 `break`**——`break` 只跳最近的一层，外层那个 `for (int i = 1;; i++)` 没有终止条件，漏一个就无限跑 |
 | P5718 | 没有错。不过这题不需要数组：`int s[n+1]` 是变长数组（VLA，C99 特性），改成边读边比只要两个 `int`，跟 P1085 一个套路 |
 | P5719 | 原来 `sum`、`A`、`B` 都用 `float` → 大数据上小数点后一位会错：`n=4096 k=3` 给 `2048.2`（应 `2048.3`），`n=10000 k=3` 给 `5000.2`（应 `5000.3`），全部 985050 组里错 3163 组。**已改成 `double`，复查 0 错** |
 | P5720 | 没有错。`a = 1` 时循环一次都不进、`count + 1 = 1` 正是答案，没被 `do-while` 带跑偏 |
 | P5721 | 没有错。`j = n; j >= i; j--` 等价于「这一行打 n-i+1 个」，`%02d` 补前导零也对了 |
+| P5722 | 没有错。题目明说「你没有高斯聪明」，所以不能用 `n(n+1)/2`，只能老实循环累加——这题考的是**别耍聪明** |
+| P5723 | 两个坑叠在一起：①`break` 写到了 `if` 外面，内层循环第一次 `j = 2` 就退出，等于只检查了「能不能被 2 整除」，所有奇数都被当质数；②循环写成 `i <= L`，那是「每个质数 ≤ L」，不是「累加和 ≤ L」。`L = 100` 正确装 9 个，改之前输出 50 个 |
 
 ## 这一组要注意的
 
