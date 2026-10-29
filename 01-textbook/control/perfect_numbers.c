@@ -13,6 +13,8 @@
  *     但 1 != 1 的因数和... 实际 1 不是完数，因为因数和是 0）。
  * 建议：内层那两个 if (i % j != 0) continue; 可以合起来写成 if (i % j == 0) { ... }，
  *       少一层缩进也更符合「能不加分支就不加」的直觉。
+ *       输出用的是 %3d 而不是教材的 %d —— 让 6、28、496 右对齐成一列，
+ *       所以每行前面会多 0~2 个空格。这是有意的对齐，不是多打了空格。
  */
 #include <stdio.h>
 int main()
@@ -29,7 +31,7 @@ int main()
         }
         if (sum == i)
         {
-            printf("%d its factors are ", i);
+            printf("%3d its factors are ", i);
             int first = 1;
             for (int j = 1; j <= i / 2; j++)
             {
