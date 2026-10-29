@@ -27,7 +27,6 @@
  *       判掉 2 之后 i 从 3 开始、每次加 2，也能少一半循环。
  */
 #include <stdio.h>
-#include <math.h>
 #include <stdbool.h>
 bool is_prime(int n)
 {
@@ -37,7 +36,7 @@ bool is_prime(int n)
         return true;
     if (n % 2 == 0)
         return false;
-    for (int i = 3; i <= sqrt(n); i++)
+    for (int i = 3; i * i <= n; i += 2)
     {
         if (n % i == 0)
             return false;

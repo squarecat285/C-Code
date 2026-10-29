@@ -11,6 +11,9 @@
 | [P1009 [NOIP 1998 普及组] 阶乘之和](https://www.luogu.com.cn/problem/P1009) | [`P1009_factorial_sum.c`](P1009_factorial_sum.c) |
 | [P1035 [NOIP 2002 普及组] 级数求和](https://www.luogu.com.cn/problem/P1035) | [`P1035_harmonic_sum.c`](P1035_harmonic_sum.c) |
 | [P1217 [USACO1.5] 回文质数 Prime Palindromes](https://www.luogu.com.cn/problem/P1217) | [`P1217_palindrome_prime.c`](P1217_palindrome_prime.c) |
+| [P1307 [NOIP 2011 普及组] 数字反转](https://www.luogu.com.cn/problem/P1307) | [`P1307_digit_reverse.c`](P1307_digit_reverse.c) |
+| [P1423 小玉在游泳](https://www.luogu.com.cn/problem/P1423) | [`P1423_xiaoyu_swimming.c`](P1423_xiaoyu_swimming.c) |
+| [P1720 月落乌啼算钱（斐波那契数列）](https://www.luogu.com.cn/problem/P1720) | [`P1720_fibonacci_money.c`](P1720_fibonacci_money.c) |
 | [P1980 [NOIP 2013 普及组] 计数问题](https://www.luogu.com.cn/problem/P1980) | [`P1980_count_digit.c`](P1980_count_digit.c) |
 | [P2669 [NOIP 2015 普及组] 金币](https://www.luogu.com.cn/problem/P2669) | [`P2669_gold_coin.c`](P2669_gold_coin.c) |
 | [P5718 【深基4.例2】找最小值](https://www.luogu.com.cn/problem/P5718) | [`P5718_find_min.c`](P5718_find_min.c) |
@@ -29,6 +32,9 @@
 | P1009 | 第一次碰高精度：`50!` 有 65 位，`long long` 只有 19 位。换成「一个数组、一格一位」之后，难点从算法变成了**长度记账**——`lenF` / `lenA` 忘了接返回值就会被截断 |
 | P1035 | 没有错。`1.0 / i` 这个小数点写对了，条件 `sum > k` 也用的是严格大于 |
 | P1217 | 两个坑：①`is_palindrome` 里 `for (int i = 1; i < len / 2; i++)` 起点写成 1，`str[0]` 没参与比较，`len = 2` 时循环体一次都不执行 → 所有两位质数被当回文，「5 500」输出 93 行（正确 12 行）；②修好回文判断后仍然 TLE（6/9 AC，66 分）——枚举 5×10⁷ 个候选，本地跑 10⁸ 要 55 秒，时限 1.2 秒。**改成「先造回文再判质数」后只用 0.03 秒**（候选从 5×10⁷ 降到 1 万） |
+| P1307 | 没有错。负号先打出来、再取绝对值，这个拆法比「在循环里判符号」干净；`m = m * 10 + t` 逐位接龙，前导零自动就没了（`120 → 21`）。`0` 这个边界也正好——`while (n > 0)` 一次都不进，`m` 还是 0 |
+| P1423 | 只有一处可疑：`s = 0` 时输出 `1`，按「一步都不用游」该是 `0`。数据范围 `0 ≤ s < 100` 是包含 0 的，所以这是唯一的风险点。其余 15 组（0.5 ~ 99.9）全对。顺带记住：等比数列求和收敛到 `2 / (1 − 0.98) = 100` 米，所以 `s ≥ 100` 永远游不到——题目正是靠这个保证有解 |
+| P1720 | 没有错，而且思路比题面聪明：题面给的是 Binet 公式（带 `√5` 和 `n` 次幂），你认出它就是斐波那契、直接整数递推——浮点公式在 `n = 48` 时会在 `%.2f` 上抖，递推一点不抖。唯一隐患是 `long long s[48]`，`n = 48` 时正好写到 `s[47]`，一格都不能少 |
 | P1980 | 没有错，只有变量名 `dight` 拼错（应为 `digit`）。`x = 0` 这个最容易漏的情况实测也对 |
 | P2669 | 没有错。这题的关键是**双层循环要跳出两层就写两个 `break`**——`break` 只跳最近的一层，外层那个 `for (int i = 1;; i++)` 没有终止条件，漏一个就无限跑 |
 | P5718 | 没有错。不过这题不需要数组：`int s[n+1]` 是变长数组（VLA，C99 特性），改成边读边比只要两个 `int`，跟 P1085 一个套路 |
