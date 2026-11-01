@@ -11,6 +11,7 @@
 | [P1009 [NOIP 1998 普及组] 阶乘之和](https://www.luogu.com.cn/problem/P1009) | [`P1009_factorial_sum.c`](P1009_factorial_sum.c) |
 | [P1035 [NOIP 2002 普及组] 级数求和](https://www.luogu.com.cn/problem/P1035) | [`P1035_harmonic_sum.c`](P1035_harmonic_sum.c) |
 | [P1075 [NOIP 2012 普及组] 质因数分解](https://www.luogu.com.cn/problem/P1075) | [`P1075_prime_factorization.c`](P1075_prime_factorization.c) |
+| [P1089 [NOIP 2004 提高组] 津津的储蓄计划](https://www.luogu.com.cn/problem/P1089) | [`P1089_savings_plan.c`](P1089_savings_plan.c) |
 | [P1217 [USACO1.5] 回文质数 Prime Palindromes](https://www.luogu.com.cn/problem/P1217) | [`P1217_palindrome_prime.c`](P1217_palindrome_prime.c) |
 | [P1307 [NOIP 2011 普及组] 数字反转](https://www.luogu.com.cn/problem/P1307) | [`P1307_digit_reverse.c`](P1307_digit_reverse.c) |
 | [P1420 最长连号](https://www.luogu.com.cn/problem/P1420) | [`P1420_longest_run.c`](P1420_longest_run.c) |
@@ -18,6 +19,7 @@
 | [P1720 月落乌啼算钱（斐波那契数列）](https://www.luogu.com.cn/problem/P1720) | [`P1720_fibonacci_money.c`](P1720_fibonacci_money.c) |
 | [P1980 [NOIP 2013 普及组] 计数问题](https://www.luogu.com.cn/problem/P1980) | [`P1980_count_digit.c`](P1980_count_digit.c) |
 | [P2669 [NOIP 2015 普及组] 金币](https://www.luogu.com.cn/problem/P2669) | [`P2669_gold_coin.c`](P2669_gold_coin.c) |
+| [P4956 [COCI 2017/2018 #6] Davor](https://www.luogu.com.cn/problem/P4956) | [`P4956_davor.c`](P4956_davor.c) |
 | [P5718 【深基4.例2】找最小值](https://www.luogu.com.cn/problem/P5718) | [`P5718_find_min.c`](P5718_find_min.c) |
 | [P5719 【深基4.例3】分类平均](https://www.luogu.com.cn/problem/P5719) | [`P5719_classify_average.c`](P5719_classify_average.c) |
 | [P5720 【深基4.例4】一尺之棰](https://www.luogu.com.cn/problem/P5720) | [`P5720_half_stick.c`](P5720_half_stick.c) |
@@ -37,6 +39,7 @@
 | P1009 | 第一次碰高精度：`50!` 有 65 位，`long long` 只有 19 位。换成「一个数组、一格一位」之后，难点从算法变成了**长度记账**——`lenF` / `lenA` 忘了接返回值就会被截断 |
 | P1035 | 没有错。`1.0 / i` 这个小数点写对了，条件 `sum > k` 也用的是严格大于 |
 | P1075 | 没有错。末尾那句注释「不能直接 i = i + 2」说明这个坑你已经踩过了——从 2 开始每次加 2 就只试偶数，3、5、7 全被跳过。432 组（含 n = 2 × 大素数、以及最大的那几批）全对 |
+| P1089 | 两处都是 gcc 报了警告的类型笔误（不是算法错）：①`scanf("%d", expense)` 少 `&`——`scanf` 要的是「往哪儿写」，给了个 `int` 的值当地址，是未定义行为；②`printf("%d", deposit * 1.2 + rest)`——`1.2` 把整个式子变成 `double`，`%d` 按整数取参，取到的根本不是这个数，样例直接打出 `0`。改成纯整数 `deposit + deposit / 5 + rest`（存款必是 100 的倍数，`/ 5` 正好整除）。修完 3010 组对拍 0 错 |
 | P1217 | 两个坑：①`is_palindrome` 里 `for (int i = 1; i < len / 2; i++)` 起点写成 1，`str[0]` 没参与比较，`len = 2` 时循环体一次都不执行 → 所有两位质数被当回文，「5 500」输出 93 行（正确 12 行）；②修好回文判断后仍然 TLE（6/9 AC，66 分）——枚举 5×10⁷ 个候选，本地跑 10⁸ 要 55 秒，时限 1.2 秒。**改成「先造回文再判质数」后只用 0.03 秒**（候选从 5×10⁷ 降到 1 万） |
 | P1307 | 没有错。负号先打出来、再取绝对值，这个拆法比「在循环里判符号」干净；`m = m * 10 + t` 逐位接龙，前导零自动就没了（`120 → 21`）。`0` 这个边界也正好——`while (n > 0)` 一次都不进，`m` 还是 0 |
 | P1420 | 三个坑叠在一起，而且 gcc 一个警告都没有（全是语义错，不是语法错）：①「连号断没断」的重置写进了「破没破纪录」那个 `if` 的 `else` 里——于是只要当前长度没超过历史最好，连号就被清零，`1 2 3 4 10 11 12` 输出 3（应 4）；②`count` / `count_max` 初值写成 0，整体少 1，`1 2 3` 输出 2（应 3）、`n = 1` 输出 0（应 1）；③断了要重置成 1 而不是 0。修好后穷举 n = 1~6 的 5460 个序列全对 |
@@ -44,6 +47,7 @@
 | P1720 | 没有错，而且思路比题面聪明：题面给的是 Binet 公式（带 `√5` 和 `n` 次幂），你认出它就是斐波那契、直接整数递推——浮点公式在 `n = 48` 时会在 `%.2f` 上抖，递推一点不抖。唯一隐患是 `long long s[48]`，`n = 48` 时正好写到 `s[47]`，一格都不能少 |
 | P1980 | 没有错，只有变量名 `dight` 拼错（应为 `digit`）。`x = 0` 这个最容易漏的情况实测也对 |
 | P2669 | 没有错。这题的关键是**双层循环要跳出两层就写两个 `break`**——`break` 只跳最近的一层，外层那个 `for (int i = 1;; i++)` 没有终止条件，漏一个就无限跑 |
+| P4956 | 没有错，一次就对了。关键化简是「X 最大」和「K 最小」其实等价——因为 `X = n - 3K`，K 越小 X 越大，所以只要从 K = 1 往上找第一个让 X ≤ 100 的 K。1456 ≤ N ≤ 145600 里恰好 397 个合法 N（364 的倍数），全部核对 0 组不一致 |
 | P5718 | 没有错。不过这题不需要数组：`int s[n+1]` 是变长数组（VLA，C99 特性），改成边读边比只要两个 `int`，跟 P1085 一个套路 |
 | P5719 | 原来 `sum`、`A`、`B` 都用 `float` → 大数据上小数点后一位会错：`n=4096 k=3` 给 `2048.2`（应 `2048.3`），`n=10000 k=3` 给 `5000.2`（应 `5000.3`），全部 985050 组里错 3163 组。**已改成 `double`，复查 0 错** |
 | P5720 | 没有错。`a = 1` 时循环一次都不进、`count + 1 = 1` 正是答案，没被 `do-while` 带跑偏 |
