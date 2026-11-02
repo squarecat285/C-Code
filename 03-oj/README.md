@@ -16,10 +16,12 @@ https://www.luogu.com.cn/
 │   ├── README.md             ← 这一组的进度表
 │   ├── P5705_digit_reversal.c
 │   └── P1421_buy_supplies.c
-└── intro-2-branch/           ← 【入门2】分支结构
+└── intro-4-array/            ← 【入门4】数组（现在这组）
     ├── README.md
-    └── P5711_leap_year.c
+    └── …
 ```
+
+目前已经有 `intro-1-sequence/`（顺序结构）、`intro-2-branch/`（分支结构）、`intro-3-loop/`（循环结构）、`intro-4-array/`（数组）四个文件夹。
 
 ### 命名约定
 

@@ -7,7 +7,7 @@
 | [【入门1】顺序结构](https://www.luogu.com.cn/training/100) | [`intro-1-sequence/`](intro-1-sequence/) | 15 |
 | [【入门2】分支结构](https://www.luogu.com.cn/training/101) | [`intro-2-branch/`](intro-2-branch/) | 18 |
 | [【入门3】循环结构](https://www.luogu.com.cn/training/102) | [`intro-3-loop/`](intro-3-loop/) | 21 |
-| 【入门4】数组 | `intro-4-array/` | 20 |
+| [【入门4】数组](https://www.luogu.com.cn/training/103) | [`intro-4-array/`](intro-4-array/) | 20 |
 
 > 交没交、过没过在洛谷上自己看，这里不记。
 
@@ -24,9 +24,11 @@
 ├── intro-2-branch/           ← 【入门2】分支结构（training/101）
 │   ├── README.md
 │   └── P2433_elementary_math.c
-└── intro-3-loop/             ← 【入门3】循环结构（training/102），现在这组
+├── intro-3-loop/             ← 【入门3】循环结构（training/102）
+│   ├── README.md
+│   └── …
+└── intro-4-array/            ← 【入门4】数组（training/103），现在这组
     ├── README.md
-    ├── P5718_find_min.c
     └── …
 ```
 
