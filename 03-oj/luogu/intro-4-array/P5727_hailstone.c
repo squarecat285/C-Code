@@ -21,20 +21,14 @@ int main()
     scanf("%d", &n);
     int i = 0;
     int s[1000];
-    for (;; i++)
+    for (;;)
     {
-        s[i] = n;
-        if (n != 1)
-        {
-            if (n % 2 == 0)
-                n = n / 2;
-            else
-                n = n * 3 + 1;
-        }
-        else
+        s[i++] = n;
+        if (n == 1)
             break;
+        n = (n % 2 == 0) ? n / 2 : n * 3 + 1;
     }
-    for (int j = i; j >= 0; j--)
+    for (int j = i - 1; j >= 0; j--)
     {
         printf("%d ", s[j]);
     }

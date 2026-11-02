@@ -21,14 +21,9 @@ int main()
 {
     int s[105];
     int count = 0;
-
-    for (int i = 0;; i++)
-    {
-        scanf("%d", &s[i]);
-        if (s[i] == 0)
-            break;
-        count++;
-    }
+    int x;
+    while (scanf("%d", &x) == 1 && x != 0)
+        s[count++] = x;
     for (int i = count - 1; i >= 0; i--)
     {
         printf("%d ", s[i]);

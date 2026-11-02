@@ -21,19 +21,18 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    int s[n];
+    int cnt[11] = {0};
     for (int i = 0; i < n; i++)
     {
-        scanf("%d", &s[i]);
-        int count = 0;
-        for (int j = 0; j < i; j++)
+        int a;
+        scanf("%d", &a);
+        int ans = 0;
+        for (int v = 0; v < a; v++)
         {
-            if (s[i] > s[j])
-            {
-                count++;
-            }
+            ans += cnt[v];
         }
-        printf("%d ", count);
+        printf("%d%c", ans, i == n - 1 ? '\n' : ' ');
+        cnt[a]++;
     }
     return 0;
 }
