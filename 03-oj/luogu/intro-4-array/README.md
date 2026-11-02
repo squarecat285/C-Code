@@ -8,9 +8,9 @@
 
 | 题目 | 文件 |
 |---|---|
-| [P1428 小鱼比可爱](https://www.luogu.com.cn/problem/P1428) | — |
-| [P1427 小鱼的数字游戏](https://www.luogu.com.cn/problem/P1427) | — |
-| [P5727 【深基5.例3】冰雹猜想](https://www.luogu.com.cn/problem/P5727) | — |
+| [P1428 小鱼比可爱](https://www.luogu.com.cn/problem/P1428) | [`P1428_cute_compare.c`](P1428_cute_compare.c) |
+| [P1427 小鱼的数字游戏](https://www.luogu.com.cn/problem/P1427) | [`P1427_number_reverse.c`](P1427_number_reverse.c) |
+| [P5727 【深基5.例3】冰雹猜想](https://www.luogu.com.cn/problem/P5727) | [`P5727_hailstone.c`](P5727_hailstone.c) |
 | [P1047 [NOIP 2005 普及组] 校门外的树](https://www.luogu.com.cn/problem/P1047) | — |
 | [P5728 【深基5.例5】旗鼓相当的对手](https://www.luogu.com.cn/problem/P5728) | — |
 | [P5729 【深基5.例7】工艺品制作](https://www.luogu.com.cn/problem/P5729) | — |
@@ -36,6 +36,9 @@
 
 | 题 | 坑 |
 |---|---|
+| P1428 | 没有错，而且躲过了最容易踩的那个点：题目特意说「可爱程度**可能一样**」，所以「不如自己可爱」必须是严格小于，判断要写 `>` 而不是 `>=`，你写对了。两个可改的地方：①`int s[n]` 是变长数组（C99），gcc 能过但栈上按 n 分配，n 一大就崩，竞赛里开固定 `int s[105]` 更稳；②`printf("%d ")` 行末多一个空格，洛谷不介意但严格比对的题会介意。**更优解**：`a_i ≤ 10` 是题目给的最大提示，开 `int cnt[11]` 计数数组，答案 = `cnt[0] + … + cnt[a-1]`，再 `cnt[a]++`，O(n²) 直接降到 O(11n) —— 这就是「用值域换时间」 |
+| P1427 | 没有错。`for (;;)` + `break` 是「不知道有几个数」的标准写法，`count` 只在非 0 时自增，所以倒着打时 0 自动被排除，不用再判一次。唯一隐患是没检查 `scanf` 返回值：万一数据提前结束（EOF），`s[i]` 保持旧值，`s[i] == 0` 可能永远不成立 → 死循环并越界写栈，这题全靠「保证末尾有一个 0」才没事。更稳的写法：`while (scanf("%d", &x) == 1 && x != 0) s[count++] = x;` |
+| P5727 | 没有错。这题数组是绕不过去的（必须倒序输出），你的写法就是标准解。最容易漏的一步是「变成 1 那一步也要存进数组」，漏了就会从 2 开始打、少一个数 —— 你没错。`n ≤ 100` 时最长的链是 `n = 97`（118 步），`s[1000]` 绰绰有余 |
 
 ## 这一组要注意的
 
