@@ -59,4 +59,4 @@ int main()
         printf("%d%c", grade[i], i == 1 ? '\n' : ' ');
     return 0;
 }
-//可以if(0/1)panduan
+
