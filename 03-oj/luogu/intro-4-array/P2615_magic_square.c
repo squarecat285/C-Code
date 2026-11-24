@@ -28,54 +28,56 @@
  * 建议：四条规则可以压成「先算右上方，越界就绕回，被占就填正下方」，代码能短一半；
  *       但初学阶段照抄题面四条更容易看懂，先写对再谈压缩
  */
-#include <stdio.h>
-int main()
-{
-    int N;
-    if (scanf("%d", &N) != 1 || N % 2 == 0)
-        return 1;
-
-    int a[40][40] = {0};
-    a[0][(N - 1) / 2] = 1;
-    int row = 0, col = (N - 1) / 2;
-    for (int i = 2; i <= N * N; i++)
-    {
-        if (row == 0 && col != N - 1)
-        {
-            a[N - 1][col + 1] = i;
-            row = N - 1, col = col + 1;
-        }
-        else if (row != 0 && col == N - 1)
-        {
-            a[row - 1][0] = i;
-            row = row - 1;
-            col = 0;
-        }
-        else if (row == 0 && col == N - 1)
-        {
-            a[row + 1][N - 1] = i;
-            row = row + 1;
-        }
-        else
-        {
-            if (a[row - 1][col + 1] == 0)
-            {
-                a[row - 1][col + 1] = i;
-                row = row - 1, col = col + 1;
-            }
-            else
-            {
-                a[row + 1][col] = i;
-                row = row + 1;
-            }
-        }
-    }
-    for (int i = 0; i < N; i++)
-    {
-        for (int j = 0; j < N; j++)
-        {
-            printf("%d%c", a[i][j], j == N - 1 ? '\n' : ' ');
-        }
-    }
-    return 0;
+#include <stdio.h>
+
+int main()
+{
+    int N;
+    if (scanf("%d", &N) != 1 || N % 2 == 0)
+        return 1;
+    int a[40][40] = {0};
+    a[0][(N - 1) / 2] = 1;
+    int row = 0, col = (N - 1) / 2;
+    for (int i = 2; i <= N * N; i++)
+    {
+        if (row == 0 && col != N - 1)
+        {
+            a[N - 1][col + 1] = i;
+            row = N - 1;
+            col = col + 1;
+        }
+        else if (row != 0 && col == N - 1)
+        {
+            a[row - 1][0] = i;
+            row = row - 1;
+            col = 0;
+        }
+        else if (row == 0 && col == N - 1)
+        {
+            a[row + 1][N - 1] = i;
+            row = row + 1;
+        }
+        else
+        {
+            if (a[row - 1][col + 1] == 0)
+            {
+                a[row - 1][col + 1] = i;
+                row = row - 1;
+                col = col + 1;
+            }
+            else
+            {
+                a[row + 1][col] = i;
+                row = row + 1;
+            }
+        }
+    }
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < N; j++)
+        {
+            printf("%d%c", a[i][j], j == N - 1 ? '\n' : ' ');
+        }
+    }
+    return 0;
 }

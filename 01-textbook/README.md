@@ -8,6 +8,7 @@
 |---|---|---|
 | [`basics/`](basics/) | 顺序结构：输出、变量、数据类型、输入输出 | ✅ |
 | [`control/`](control/) | 选择结构（`if`）与循环结构（`while` / `for`） | ✅ |
+| [`function/`](function/) | 函数与递归 | ✅ |
 
 ### 第三章课后题（都在 `basics/` 里）
 
@@ -27,6 +28,12 @@
 | [`control/count_chars.c`](control/count_chars.c) | 一行字符里字母、空格、数字、其他各几个 | `getchar` 循环、`ctype.h`、`c` 要声明成 `int` |
 | [`control/perfect_numbers.c`](control/perfect_numbers.c) | 1000 以内的所有完数及其因子 | 双重循环、`j <= i / 2`、用 `first` 标记控制逗号 |
 
+### 第七章课后题（都在 `function/` 里）
+
+| 文件 | 题目让你算什么 | 练到的 |
+|---|---|---|
+| [`function/legendre_polynomials.c`](function/legendre_polynomials.c) | 按递推式求 n 阶勒让德多项式 `P_n(x)` | 递归三件套、**指数级重复计算**、代特殊值自查（`P_n(1) = 1`） |
+
 ## 以后继续加
 
 按**知识阶段**分目录，不要按书的页码分。学到哪就建哪个：
@@ -34,7 +41,6 @@
 | 目录 | 对应内容 |
 |---|---|
 | `array/` | 数组 |
-| `function/` | 函数 |
 | `pointer/` | 指针 |
 | `struct/` | 结构体与共用体 |
 | `file/` | 文件操作 |
